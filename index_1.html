@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sherry Williams RN — Health &amp; Wellness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Karla:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF6EC;
+    --ink:#1C2320;
+    --ink-soft:#4A524C;
+    --line: rgba(28,35,32,0.14);
+
+    --wow-a:#7A2333; --wow-b:#D9A45C;
+    --bump-a:#26418C; --bump-b:#B9CBEA;
+    --slw-a:#B5541F; --slw-b:#EAD9BE;
+    --thrive-a:#3F5A3A; --thrive-b:#C4703F;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:linear-gradient(180deg, #F3E6DC 0%, var(--paper) 420px);
+    color:var(--ink);
+    font-family:'Karla',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+
+  header.top{
+    padding:64px 28px 40px;
+    max-width:1080px;
+    margin:0 auto;
+    border-bottom:1px solid var(--line);
+  }
+  .eyebrow{
+    font-family:'Karla',sans-serif;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin:0 0 18px;
+  }
+  h1{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:clamp(34px,5.4vw,58px);
+    line-height:1.05;
+    margin:0 0 20px;
+    letter-spacing:-0.01em;
+  }
+  header.top p.lede{
+    font-size:18px;
+    line-height:1.6;
+    color:var(--ink-soft);
+    max-width:560px;
+    margin:0;
+  }
+
+  .photoframe{
+    background:linear-gradient(160deg, #F3E6DC 0%, #EFE6DD 100%);
+    border:1.5px dashed var(--wow-b);
+    border-radius:20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    color:var(--ink-soft);
+    text-align:center;
+    padding:8px;
+  }
+  .photoframe svg{opacity:.5;}
+  .photoframe span{font-family:'Karla',sans-serif;font-size:10.5px;line-height:1.4;max-width:180px;}
+
+  header.top{display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:center;}
+  @media (max-width:760px){ header.top{grid-template-columns:1fr;} }
+  header.top .photoframe{height:200px;}
+
+  section.about{
+    max-width:1080px;
+    margin:0 auto;
+    padding:44px 28px 8px;
+    display:grid;
+    grid-template-columns:150px 1fr;
+    gap:26px;
+    align-items:start;
+  }
+  @media (max-width:560px){ section.about{grid-template-columns:1fr;} }
+  section.about .photoframe{width:150px;height:150px;border-radius:50%;}
+  section.about .story p{
+    font-size:16px;
+    line-height:1.65;
+    color:var(--ink);
+    margin:0 0 14px;
+  }
+  section.about .story p:last-of-type{margin-bottom:0;}
+  section.about blockquote{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:19px;
+    line-height:1.55;
+    margin:22px 0 0;
+    color:var(--ink);
+    border-left:3px solid var(--wow-b);
+    padding-left:18px;
+  }
+  section.about cite{
+    display:block;
+    margin-top:10px;
+    font-family:'Karla',sans-serif;
+    font-style:normal;
+    font-size:12.5px;
+    color:var(--ink-soft);
+  }
+  .story-bridge{
+    max-width:1080px;
+    margin:36px auto 0;
+    padding:0 28px;
+  }
+  .story-bridge p.label{
+    font-family:'Karla',sans-serif;
+    font-size:11.5px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin:0 0 14px;
+  }
+  .story-bridge .rows{display:flex;flex-direction:column;gap:10px;}
+  .story-bridge .row{
+    display:flex;
+    gap:14px;
+    align-items:baseline;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:14px 18px;
+    font-size:14px;
+    line-height:1.5;
+  }
+  .story-bridge .row .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:6px;}
+  .story-bridge .row b{font-family:'Fraunces',serif;font-weight:600;font-style:normal;margin-right:4px;}
+  .story-bridge .row span{color:var(--ink-soft);}
+
+  .chart{flex-direction:row;}
+  .chart-main{display:flex;flex-direction:column;flex:1;}
+  .chart-photo{height:88px;margin:14px 14px 0;}
+
+  .rn-mark{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:'Karla',sans-serif;
+    font-size:13px;
+    color:var(--ink);
+    border:1px solid var(--line);
+    padding:6px 12px;
+    border-radius:100px;
+    margin-bottom:28px;
+  }
+  .rn-mark::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--wow-a);}
+
+  /* Chart tabs */
+  .charts{
+    max-width:1080px;
+    margin:0 auto;
+    padding:56px 28px 90px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+  }
+  @media (max-width:760px){ .charts{grid-template-columns:1fr;} }
+
+  .chart{
+    position:relative;
+    display:flex;
+    text-decoration:none;
+    color:var(--ink);
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:20px;
+    overflow:hidden;
+    min-height:190px;
+    box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .chart:hover{transform:translateY(-3px);box-shadow:0 16px 30px -14px rgba(28,35,32,0.28);}
+  .chart:focus-visible{outline:3px solid var(--ink);outline-offset:2px;}
+
+  .tab{
+    writing-mode:vertical-rl;
+    text-orientation:mixed;
+    font-family:'Karla',sans-serif;
+    font-size:12px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:0 12px;
+    flex-shrink:0;
+    width:44px;
+  }
+  .chart.wow .tab{background:var(--wow-a);}
+  .chart.bump .tab{background:var(--bump-a);}
+  .chart.slw .tab{background:var(--slw-a);}
+  .chart.thrive .tab{background:var(--thrive-a);}
+
+  .chart-body{padding:28px 26px;display:flex;flex-direction:column;gap:10px;flex:1;}
+  .chart-name{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:25px;
+    margin:0;
+  }
+  .chart-desc{
+    font-size:15px;
+    line-height:1.55;
+    color:var(--ink-soft);
+    margin:0;
+    flex:1;
+  }
+  .chart-cta{
+    font-family:'Karla',sans-serif;
+    font-size:12px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+  .chart.wow .chart-cta{color:var(--wow-a);}
+  .chart.bump .chart-cta{color:var(--bump-a);}
+  .chart.slw .chart-cta{color:var(--slw-a);}
+  .chart.thrive .chart-cta{color:var(--thrive-a);}
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:36px 28px 56px;
+  }
+  footer .wrap{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:16px;
+    font-family:'Karla',sans-serif;
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+  footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);}
+
+  @media (prefers-reduced-motion: reduce){
+    .chart{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div>
+    <p class="rn-mark">RN · Dallas–Fort Worth</p>
+    <h1>Sherry Williams RN<br>Health &amp; Wellness</h1>
+    <p class="lede">One nurse, four ways to get care across the DFW metro — from your first prenatal appointment to a lifetime of wellness. Pick the chart that fits what you need today.</p>
+  </div>
+  <div class="photoframe">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-4-4 3-3-2-6 5"/></svg>
+    <span>Photo: Sherry with a client, warm and candid</span>
+  </div>
+</header>
+
+<section class="about">
+  <div class="photoframe">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-4-4 3-3-2-6 5"/></svg>
+    <span>Photo: Sherry, headshot</span>
+  </div>
+  <div class="story">
+    <p>In 2005, I was diagnosed with Lupus. For an active nurse with three small children, news like that is crushing. I wanted answers. I wanted my health back.</p>
+    <p>I followed the plan my own doctors gave me, but honestly, it wasn't working. So I started doing my own research — I'm a nurse educator, I know how to build a curriculum, so I built my own path back to health. I became enamored with IV hydration, B-12 shots, and the kind of workouts that sweat out impurities. I put my Lupus into remission.</p>
+    <p>That's when it hit me: if this worked for me, it could work for other people too. Everything I've built since — every one of these four businesses — comes out of that same idea. Real nursing knowledge, made personal, and put directly into someone's hands.</p>
+    <blockquote>&ldquo;I built each of these around a moment in someone's life where the right kind of care changes everything.&rdquo;</blockquote>
+    <cite>— Sherry Williams, RN, founder</cite>
+  </div>
+</section>
+
+<div class="story-bridge">
+  <p class="label">How my story became four ways to care</p>
+  <div class="rows">
+    <div class="row"><span class="dot" style="background:var(--wow-a)"></span><div><b>Nurse WOW</b><span>came directly from my own remission — the IV hydration and vitamin therapy that gave me my health back.</span></div></div>
+    <div class="row"><span class="dot" style="background:var(--bump-a)"></span><div><b>Baby Bump Dallas</b><span>comes from 20 years as a labor &amp; delivery nurse and being a mom of three myself — I know exactly how alone the fourth trimester can feel.</span></div></div>
+    <div class="row"><span class="dot" style="background:var(--slw-a)"></span><div><b>SLW Consulting</b><span>grew out of being a nurse educator first — teaching has always been how I process what I know.</span></div></div>
+    <div class="row"><span class="dot" style="background:var(--thrive-a)"></span><div><b>Thrive</b><span>is my belief that care and growth were never meant to be separate things, put into a physical space.</span></div></div>
+  </div>
+</div>
+
+<nav class="charts" aria-label="Our services">
+  <a class="chart wow" href="nurse-wow.html">
+    <span class="tab">WOW</span>
+    <span class="chart-main">
+      <span class="chart-photo photoframe"><span>Photo: IV hydration visit</span></span>
+      <span class="chart-body">
+        <span class="chart-name">Nurse WOW</span>
+        <span class="chart-desc">Concierge IV hydration, immunity boosters, weight-loss support, and hyperemesis treatment — brought to you.</span>
+        <span class="chart-cta">View services →</span>
+      </span>
+    </span>
+  </a>
+
+  <a class="chart bump" href="baby-bump-dallas.html">
+    <span class="tab">BUMP</span>
+    <span class="chart-main">
+      <span class="chart-photo photoframe"><span>Photo: mother and newborn</span></span>
+      <span class="chart-body">
+        <span class="chart-name">Baby Bump Dallas</span>
+        <span class="chart-desc">In-home postpartum nursing care, plus classes and workshops for new and expecting moms.</span>
+        <span class="chart-cta">View services →</span>
+      </span>
+    </span>
+  </a>
+
+  <a class="chart slw" href="slw-consulting.html">
+    <span class="tab">SLW</span>
+    <span class="chart-main">
+      <span class="chart-photo photoframe"><span>Photo: mentoring a nurse</span></span>
+      <span class="chart-body">
+        <span class="chart-name">SLW Consulting</span>
+        <span class="chart-desc">A boutique CNA certification program in Ennis, taught by a working nurse.</span>
+        <span class="chart-cta">View services →</span>
+      </span>
+    </span>
+  </a>
+
+  <a class="chart thrive" href="thrive.html">
+    <span class="tab">THRV</span>
+    <span class="chart-main">
+      <span class="chart-photo photoframe"><span>Photo: Thrive activity time</span></span>
+      <span class="chart-body">
+        <span class="chart-name">Thrive</span>
+        <span class="chart-desc">An in-person day program in Ennis for adults with special needs, building life skills and independence.</span>
+        <span class="chart-cta">View services →</span>
+      </span>
+    </span>
+  </a>
+</nav>
+
+<footer>
+  <div class="wrap">
+    <span>Dallas, TX</span>
+    <a href="tel:4695701329">469-570-1329</a>
+    <a href="mailto:sherryrn@nursewow.net">sherryrn@nursewow.net</a>
+  </div>
+</footer>
+
+</body>
+</html>

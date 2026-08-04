@@ -3,88 +3,102 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Baby Bump Dallas — In-Home Postpartum Care</title>
+<title>Baby Bump Dallas | Fourth Trimester Care</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Karla:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --a:#26418C; --b:#B9CBEA;
-    --paper:#F6F3EE; --ink:#1C2320; --ink-soft:#4A524C; --line:rgba(28,35,32,0.14);
-    --card:#FFFEFC;
+    --a:#26418C; --b:#B9CBEA; --wash:#E1E9F7;
+    --paper:#FBF6EC; --ink:#1C2320; --ink-soft:#4A524C; --line:rgba(28,35,32,0.14);
+    --card:#FFFDF8;
   }
   *{box-sizing:border-box;}
-  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;}
+  body{margin:0;background:linear-gradient(180deg, var(--wash) 0%, var(--paper) 480px);color:var(--ink);font-family:'Karla',sans-serif;-webkit-font-smoothing:antialiased;}
   .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
   a{color:inherit;}
 
   .tabbar{background:var(--a);color:#fff;}
-  .tabbar .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.05em;}
+  .tabbar .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;font-family:'Karla',sans-serif;font-weight:700;font-size:13px;letter-spacing:.05em;}
   .tabbar a{text-decoration:none;opacity:.9;}
   .tabbar a:hover{opacity:1;text-decoration:underline;}
 
-  header.hero{padding:72px 28px 56px;display:flex;gap:36px;max-width:1080px;margin:0 auto;}
+  header.hero{padding:72px 28px 40px;display:flex;gap:36px;max-width:1080px;margin:0 auto;}
   @media (max-width:760px){header.hero{flex-direction:column;padding:48px 20px;}}
-  .spine{width:6px;background:var(--b);border-radius:3px;flex-shrink:0;}
+  .spine{width:6px;background:var(--b);border-radius:10px;flex-shrink:0;}
   .hero-copy{flex:1;}
-  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--a);margin:0 0 16px;}
+  .eyebrow{font-family:'Karla',sans-serif;font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--a);margin:0 0 16px;}
   h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(34px,5.2vw,54px);line-height:1.06;margin:0 0 18px;letter-spacing:-0.01em;}
   .hero-copy p.lede{font-size:18px;line-height:1.6;color:var(--ink-soft);max-width:560px;margin:0 0 30px;}
 
   .cta-row{display:flex;gap:14px;flex-wrap:wrap;}
-  .btn{display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.05em;text-transform:uppercase;padding:14px 22px;border-radius:3px;text-decoration:none;}
-  .btn.primary{background:var(--a);color:#fff;border-radius:100px;}
-  .btn.primary:hover{opacity:.9;}
-  .btn.ghost{border:1px solid var(--line);color:var(--ink);border-radius:100px;background:transparent;cursor:pointer;font:inherit;}
-  .btn.ghost:hover{border-color:var(--ink);}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Karla',sans-serif;font-weight:700;font-size:13px;letter-spacing:.05em;text-transform:uppercase;padding:14px 22px;border-radius:100px;text-decoration:none;border:none;cursor:pointer;font-weight:inherit;}
+  .btn.primary{background:var(--a);color:#fff;transition:transform .15s ease, opacity .15s ease;}
+  .btn.primary:hover{opacity:.92;transform:translateY(-2px);}
+  .btn.ghost{border:1px solid var(--line);color:var(--ink);background:transparent;}
+  .btn.ghost:hover{border-color:var(--ink);transform:translateY(-2px);}
 
-  .service-area{max-width:1080px;margin:0 auto;padding:0 28px 12px;}
-  .service-area .box{padding:14px 20px;background:#fff;border:1px solid var(--line);border-radius:10px;font-size:14px;color:var(--ink-soft);display:flex;align-items:center;gap:10px;}
-
-  section.howworks{max-width:1080px;margin:0 auto;padding:36px 28px 4px;}
-  .hw-label{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 16px;}
-  .hw-steps{display:flex;gap:18px;}
-  @media (max-width:760px){.hw-steps{flex-direction:column;}}
-  .hw-step{flex:1;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:20px 22px;display:flex;gap:14px;}
-  .hw-num{font-family:'Fraunces',serif;font-size:26px;color:var(--a);flex-shrink:0;}
-  .hw-step h4{margin:0 0 6px;font-family:'Fraunces',serif;font-weight:500;font-size:16px;}
-  .hw-step p{margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5;}
-
-  .cbform{display:none;margin-top:18px;max-width:360px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px;}
-  .cbform.open{display:block;}
-  .cbform label{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;color:var(--ink-soft);margin:0 0 6px;}
-  .cbform input,.cbform select{width:100%;box-sizing:border-box;padding:10px 12px;border-radius:6px;border:1px solid var(--line);font-family:'Inter',sans-serif;font-size:14px;margin-bottom:12px;background:var(--paper);color:var(--ink);}
-  .cbform .sent{display:none;font-size:14px;color:var(--ink-soft);}
-
-  section.services{padding:20px 28px 80px;max-width:1080px;margin:0 auto;}
-  .section-head{display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:32px;}
-  .section-head h2{font-family:'Fraunces',serif;font-weight:500;font-size:26px;margin:0;}
-  .section-head span{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-soft);}
-
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-  @media (max-width:900px){.grid{grid-template-columns:1fr;}}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:26px 24px;}
-  .card h3{font-family:'Fraunces',serif;font-weight:500;font-size:19px;margin:0 0 10px;}
-  .card p{font-size:15px;line-height:1.55;color:var(--ink-soft);margin:0;}
-  .tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--a);background:rgba(38,65,140,0.09);padding:4px 9px;border-radius:100px;margin-bottom:12px;}
-
-  .photoframe{background:#EFE6DD;border:1.5px dashed var(--line);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--ink-soft);text-align:center;padding:10px;}
+  .photoframe{background:linear-gradient(160deg, var(--wash) 0%, #EFE6DD 100%);border:1.5px dashed var(--b);border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--ink-soft);text-align:center;padding:10px;}
   .photoframe svg{opacity:.5;}
-  .photoframe span{font-family:'IBM Plex Mono',monospace;font-size:10.5px;line-height:1.4;max-width:180px;}
+  .photoframe span{font-family:'Karla',sans-serif;font-size:10.5px;line-height:1.4;max-width:180px;}
   .hero-photo{width:260px;height:220px;flex-shrink:0;}
   @media (max-width:760px){.hero-photo{width:100%;height:200px;}}
 
-  .quote{max-width:1080px;margin:40px auto 0;padding:0 28px;}
-  .quote .box{display:flex;gap:16px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;}
-  .quote .photoframe{width:60px;height:60px;border-radius:50%;flex-shrink:0;}
-  .quote blockquote{font-family:'Fraunces',serif;font-style:italic;font-size:15px;line-height:1.55;margin:0;}
-  .quote cite{display:block;margin-top:6px;font-family:'IBM Plex Mono',monospace;font-style:normal;font-size:11.5px;color:var(--ink-soft);}
+  .cbform{display:none;margin-top:18px;max-width:360px;background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);border-radius:16px;padding:20px;}
+  .cbform.open{display:block;}
+  .cbform label{display:block;font-family:'Karla',sans-serif;font-size:11px;text-transform:uppercase;color:var(--ink-soft);margin:0 0 6px;}
+  .cbform input,.cbform select{width:100%;box-sizing:border-box;padding:10px 12px;border-radius:12px;border:1px solid var(--line);font-family:'Karla',sans-serif;font-size:14px;margin-bottom:12px;background:var(--paper);color:var(--ink);}
+  .cbform .sent{display:none;font-size:14px;color:var(--ink-soft);}
 
-  .note{margin-top:56px;padding:24px 26px;border:1px dashed var(--line);border-radius:4px;font-size:15px;line-height:1.6;color:var(--ink-soft);}
+  section{padding:20px 28px;max-width:1080px;margin:0 auto;}
+  .section-head{margin-bottom:28px;}
+  .section-head h2{font-family:'Fraunces',serif;font-weight:500;font-size:26px;margin:0 0 8px;}
+  .section-head p{font-size:15px;color:var(--ink-soft);margin:0;max-width:620px;}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+  @media (max-width:560px){.grid{grid-template-columns:1fr;}}
+  .card{background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);border-radius:18px;padding:24px 22px;border-top:4px solid var(--a);}
+  .card h3{font-family:'Fraunces',serif;font-weight:500;font-size:18px;margin:0 0 8px;}
+  .card p{font-size:14px;line-height:1.55;color:var(--ink-soft);margin:0;}
+
+  .also-row{display:flex;justify-content:center;gap:32px;margin:36px 0;flex-wrap:wrap;}
+  .also-row div{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink-soft);font-family:'Karla',sans-serif;}
+
+  .trimester{background:var(--a);color:#fff;text-align:center;border-radius:16px;padding:44px 28px;}
+  .trimester .eyebrow{color:var(--b);}
+  .trimester p.section-sub{color:rgba(255,255,255,.85);max-width:600px;margin:8px auto 0;font-size:14.5px;}
+  .tri-row{display:flex;justify-content:center;align-items:flex-start;margin-top:40px;max-width:560px;margin-left:auto;margin-right:auto;}
+  .tri-step{flex:1;text-align:center;}
+  .tri-step .circle{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.18);border:2px solid rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;margin:0 auto 8px;font-family:'Fraunces',serif;font-weight:600;font-size:14px;}
+  .tri-step.active .circle{background:#fff;color:var(--a);border-color:#fff;}
+  .tri-step span{font-size:11.5px;font-family:'Karla',sans-serif;opacity:.85;}
+  .tri-step.active span{font-weight:600;opacity:1;}
+  .tri-line{flex:.6;height:2px;background:rgba(255,255,255,.35);margin-top:19px;}
+
+  .about-grid{display:grid;grid-template-columns:200px 1fr;gap:32px;align-items:center;}
+  @media (max-width:700px){.about-grid{grid-template-columns:1fr;}}
+  .credential-card{background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);border-radius:20px;padding:26px 22px;text-align:center;}
+  .credential-card .role{font-family:'Karla',sans-serif;font-size:11px;text-transform:uppercase;color:var(--a);margin-bottom:6px;}
+  .credential-card .name{font-family:'Fraunces',serif;font-size:20px;font-weight:600;margin-bottom:4px;}
+  .credential-card .creds{font-size:12.5px;color:var(--ink-soft);}
+  .about-text p{color:var(--ink-soft);font-size:15px;line-height:1.6;margin:0 0 14px;}
+
+  .quote{max-width:760px;margin:0 auto;padding:0 28px;text-align:center;}
+  .quote blockquote{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:clamp(19px,2.6vw,25px);line-height:1.45;margin:0 0 16px;}
+  .quote cite{font-style:normal;font-family:'Karla',sans-serif;font-size:12.5px;color:var(--ink-soft);}
+  .why-grid{display:flex;justify-content:center;gap:34px;margin-top:40px;flex-wrap:wrap;}
+  .why-grid div{max-width:180px;text-align:center;}
+  .why-grid .t{font-family:'Fraunces',serif;font-weight:600;color:var(--a);font-size:15px;margin-bottom:6px;}
+  .why-grid .d{font-size:12.5px;color:var(--ink-soft);}
+
+  .service-area{margin-bottom:12px;}
+  .service-area .box{padding:14px 20px;background:#fff;border:1px solid var(--line);border-radius:16px;font-size:14px;color:var(--ink-soft);display:flex;align-items:center;gap:10px;}
+
+  .note{margin-top:36px;padding:22px 24px;border:1px dashed var(--line);border-radius:18px;font-size:14px;line-height:1.6;color:var(--ink-soft);}
   .note a{color:var(--a);font-weight:600;text-decoration:underline;}
 
-  footer{border-top:1px solid var(--line);padding:36px 28px 56px;}
-  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink-soft);}
+  footer{border-top:1px solid var(--line);padding:36px 28px 56px;margin-top:40px;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:'Karla',sans-serif;font-weight:600;font-size:13px;color:var(--ink-soft);}
   footer a{border-bottom:1px solid var(--line);text-decoration:none;}
 </style>
 </head>
@@ -100,9 +114,9 @@
 <header class="hero">
   <div class="spine"></div>
   <div class="hero-copy">
-    <p class="eyebrow">Baby Bump Dallas · Postpartum Care</p>
-    <h1>The fourth trimester, with a nurse beside you.</h1>
-    <p class="lede">In-home postpartum nursing care for Dallas families, plus classes and workshops that help you feel confident and supported in the weeks and months after delivery.</p>
+    <p class="eyebrow">Baby Bump Dallas · Fourth Trimester Care</p>
+    <h1>The trimester everyone forgets to support.</h1>
+    <p class="lede">Antepartum, birth, and postpartum concierge nursing services supporting Dallas families through pregnancy and the fourth trimester — the twelve weeks after birth that matter just as much as the nine months before it.</p>
     <div class="cta-row">
       <button class="btn primary" onclick="document.getElementById('cbform').classList.toggle('open')">Request a callback</button>
       <a class="btn ghost" href="tel:4695701329">Call or text 469-570-1329</a>
@@ -112,8 +126,8 @@
       <input type="text" placeholder="Your name">
       <label>Phone</label>
       <input type="tel" placeholder="(214) 555-0100">
-      <label>Best time to call</label>
-      <select><option>Morning</option><option>Afternoon</option><option>Evening</option></select>
+      <label>I'm interested in</label>
+      <select><option>Breastfeeding Education</option><option>Birthing Classes</option><option>Postpartum Support</option><option>Newborn Night Nurse Services</option><option>Not sure yet — just exploring</option></select>
       <button class="btn primary" style="width:100%;justify-content:center" onclick="document.getElementById('cbsent').style.display='block'">Send request</button>
       <p class="sent" id="cbsent">Thanks — Sherry's team will call you back within one business day.</p>
     </div>
@@ -124,51 +138,87 @@
   </div>
 </header>
 
-<div class="service-area"><div class="box">Serving Dallas, Fort Worth, Plano, and the greater DFW metro.</div></div>
+<div class="service-area wrap"><div class="box">Serving Dallas, Fort Worth, Plano, and the greater DFW metro.</div></div>
 
-<section class="howworks">
-  <p class="hw-label">How it works</p>
-  <div class="hw-steps">
-    <div class="hw-step"><span class="hw-num">1</span><div><h4>Request a callback</h4><p>Tell us a little about what you need and the best time to reach you.</p></div></div>
-    <div class="hw-step"><span class="hw-num">2</span><div><h4>Talk it through with Sherry</h4><p>She'll call you back to answer questions and set up a visit or a call — whichever fits you.</p></div></div>
-  </div>
-</section>
-
-<section class="services">
+<section>
   <div class="section-head">
     <h2>How we support you</h2>
-    <span>Postpartum · Dallas–Fort Worth</span>
+    <p>Hands-on care and real education, from your first prenatal appointment through the fourth trimester.</p>
   </div>
   <div class="grid">
     <div class="card">
-      <span class="tag">In-Home Care</span>
-      <h3>Postpartum Nursing Visits</h3>
-      <p>Hands-on care in your own home — newborn checks, recovery support, and a calm, experienced presence when you need it most.</p>
+      <h3>Breastfeeding Education</h3>
+      <p>Practical, judgment-free support for feeding your baby — before and after delivery.</p>
     </div>
     <div class="card">
-      <span class="tag">Education</span>
-      <h3>Classes &amp; Workshops</h3>
-      <p>Practical, judgment-free classes on newborn care, recovery, and what to actually expect in those first weeks home.</p>
+      <h3>Birthing Classes</h3>
+      <p>Real preparation for labor and delivery, taught from two decades of bedside experience.</p>
     </div>
     <div class="card">
-      <span class="tag">Community</span>
-      <h3>Speaking &amp; Teaching Events</h3>
-      <p>Sherry speaks and teaches for groups, hospitals, and organizations on postpartum care and support for new families.</p>
+      <h3>Postpartum Support</h3>
+      <p>In-home recovery care and newborn checks in the weeks after delivery.</p>
+    </div>
+    <div class="card">
+      <h3>Newborn Night Nurse Services</h3>
+      <p>Overnight care so you can actually rest, plus hands-on help learning how to care for your baby day and night.</p>
     </div>
   </div>
+  <div class="also-row">
+    <div>Prenatal Education</div>
+    <div>Newborn Care Basics</div>
+    <div>Newborn CPR Certification</div>
+  </div>
+</section>
 
+<section>
+  <div class="trimester">
+    <p class="eyebrow">Why "Fourth Trimester"</p>
+    <h2 style="margin:0;font-family:'Fraunces',serif;font-weight:500;font-size:clamp(24px,3.4vw,32px);">The trimester everyone forgets to support.</h2>
+    <p class="section-sub">The 12 weeks after birth are as critical as pregnancy itself — yet most support disappears the moment baby arrives. Baby Bump Dallas exists to fill exactly that gap.</p>
+    <div class="tri-row">
+      <div class="tri-step"><div class="circle">1</div><span>First</span></div>
+      <div class="tri-line"></div>
+      <div class="tri-step"><div class="circle">2</div><span>Second</span></div>
+      <div class="tri-line"></div>
+      <div class="tri-step"><div class="circle">3</div><span>Third</span></div>
+      <div class="tri-line"></div>
+      <div class="tri-step active"><div class="circle">4</div><span>Fourth</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="about-grid">
+    <div class="credential-card">
+      <div class="role">Founder &amp; Lead Educator</div>
+      <div class="name">Sherry Williams</div>
+      <div class="creds">BSN, RN · MSN Candidate<br>20+ years in Labor &amp; Delivery</div>
+    </div>
+    <div class="about-text">
+      <p class="eyebrow">Your Favorite L&amp;D Nurse, On Your Side</p>
+      <h2 style="font-family:'Fraunces',serif;font-weight:500;font-size:24px;margin:0 0 14px;">Trusted, warm, and clinically grounded.</h2>
+      <p>Baby Bump Dallas was built by Sherry Williams, BSN, RN — 20+ years in Labor &amp; Delivery and a nurse educator who has walked thousands of families through exactly what you're facing right now.</p>
+      <p>I'm also a mom of three. I know firsthand how much support disappears the second the baby actually arrives — everyone shows up for the pregnancy, and then you're mostly on your own. This isn't generic parenting advice. It's the same guidance I'd give a family on my own unit — direct, warm, and grounded in real clinical experience, not a script.</p>
+    </div>
+  </div>
+</section>
+
+<section>
   <div class="quote">
-    <div class="box">
-      <div class="photoframe"><span>Photo</span></div>
-      <div>
-        <blockquote>&ldquo;I finally felt like someone had my back in those first hard weeks.&rdquo;</blockquote>
-        <cite>— a Baby Bump Dallas mom</cite>
-      </div>
+    <blockquote>&ldquo;Pregnancy gets nine months of preparation. The fourth trimester gets none — until now.&rdquo;</blockquote>
+    <cite>— Sherry Williams, BSN, RN, Founder</cite>
+    <div class="why-grid">
+      <div><div class="t">All Under One Roof</div><div class="d">Breastfeeding, birthing, postpartum, and night care together</div></div>
+      <div><div class="t">L&amp;D-Nurse Led</div><div class="d">20+ years of real bedside experience</div></div>
+      <div><div class="t">Warm, Not Clinical-Cold</div><div class="d">Support that feels like a trusted friend</div></div>
+      <div><div class="t">Community-Rooted</div><div class="d">Built for Dallas families, by a Dallas nurse</div></div>
     </div>
   </div>
+</section>
 
+<section>
   <div class="note">
-    Need concierge IV hydration or vitamin injections during pregnancy or recovery? Visit <a href="nurse-wow.html">Nurse WOW</a> for medical concierge services.
+    Looking for concierge IV hydration or vitamin injections during pregnancy or recovery? Visit <a href="nurse-wow.html">Nurse WOW</a> for medical concierge services.
   </div>
 </section>
 
