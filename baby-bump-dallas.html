@@ -10,7 +10,7 @@
 <style>
   :root{
     --a:#26418C; --b:#B9CBEA; --wash:#E1E9F7;
-    --paper:#FBF6EC; --ink:#1C2320; --ink-soft:#4A524C; --line:rgba(28,35,32,0.14);
+    --fun:#FFC93C; --fun-ink:#5C3A00; --paper:#FBF6EC; --ink:#1C2320; --ink-soft:#4A524C; --line:rgba(28,35,32,0.14);
     --card:#FFFDF8;
   }
   *{box-sizing:border-box;}
@@ -35,7 +35,8 @@
   .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Karla',sans-serif;font-weight:700;font-size:13px;letter-spacing:.05em;text-transform:uppercase;padding:14px 22px;border-radius:100px;text-decoration:none;border:none;cursor:pointer;font-weight:inherit;}
   .btn.primary{background:var(--a);color:#fff;transition:transform .15s ease, opacity .15s ease;}
   .price-badge{display:inline-flex;align-items:center;gap:8px;font-family:'Karla',sans-serif;font-size:12.5px;padding:8px 16px;border-radius:100px;margin:0 0 22px;border:1px solid var(--line);color:var(--ink-soft);}
-  .btn.primary:hover{opacity:.92;transform:translateY(-2px);}
+  .btn.primary:hover{opacity:.95;transform:translateY(-2px) scale(1.03);}
+  .btn.primary:active{transform:translateY(0) scale(.97);}
   .btn.ghost{border:1px solid var(--line);color:var(--ink);background:transparent;}
   .btn.ghost:hover{border-color:var(--ink);transform:translateY(-2px);}
 
@@ -60,7 +61,8 @@
 
   .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
   @media (max-width:560px){.grid{grid-template-columns:1fr;}}
-  .card{background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);border-radius:18px;padding:24px 22px;border-top:4px solid var(--a);}
+  .card{background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);border-radius:18px;padding:24px 22px;border-top:4px solid var(--a);transition:transform .2s ease, box-shadow .2s ease;}
+  .card:hover{transform:translateY(-5px) rotate(-1deg);box-shadow:0 14px 30px -12px rgba(40,25,10,0.28);}
   .card h3{font-family:'Fraunces',serif;font-weight:500;font-size:18px;margin:0 0 8px;}
   .card p{font-size:14px;line-height:1.55;color:var(--ink-soft);margin:0;}
 
@@ -80,7 +82,8 @@
 
   .about-grid{display:grid;grid-template-columns:200px 1fr;gap:32px;align-items:center;}
   @media (max-width:700px){.about-grid{grid-template-columns:1fr;}}
-  .credential-card{background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);border-radius:20px;padding:26px 22px;text-align:center;}
+  .credential-card{background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);border-radius:20px;padding:26px 22px;text-align:center;transition:transform .2s ease, box-shadow .2s ease;}
+  .credential-card:hover{transform:translateY(-5px) rotate(1deg);box-shadow:0 14px 30px -12px rgba(40,25,10,0.28);}
   .credential-card .role{font-family:'Karla',sans-serif;font-size:11px;text-transform:uppercase;color:var(--a);margin-bottom:6px;}
   .credential-card .name{font-family:'Fraunces',serif;font-size:20px;font-weight:600;margin-bottom:4px;}
   .credential-card .creds{font-size:12.5px;color:var(--ink-soft);}
@@ -101,6 +104,7 @@
   .note a{color:var(--a);font-weight:600;text-decoration:underline;}
 
   footer{border-top:1px solid var(--line);padding:36px 28px 56px;margin-top:40px;}
+  footer .tagline{font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:var(--ink-soft);margin:0 0 16px;}
   footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:'Karla',sans-serif;font-weight:600;font-size:13px;color:var(--ink-soft);}
   footer a{border-bottom:1px solid var(--line);text-decoration:none;}
 </style>
@@ -231,6 +235,7 @@
 </section>
 
 <footer>
+  <div class="wrap"><p class="tagline">Nine months of love, twelve more weeks of backup.</p></div>
   <div class="wrap">
     <span>Dallas, TX</span>
     <a href="tel:4695701329">469-570-1329</a>

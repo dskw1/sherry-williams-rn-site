@@ -10,7 +10,7 @@
 <style>
   :root{
     --a:#7A2333; --b:#D9A45C; --wash:#F3E3C6;
-    --paper:#FBF6EC; --ink:#1C2320; --ink-soft:#4A524C; --line:rgba(28,35,32,0.14);
+    --fun:#FFC93C; --fun-ink:#5C3A00; --paper:#FBF6EC; --ink:#1C2320; --ink-soft:#4A524C; --line:rgba(28,35,32,0.14);
     --card:#FFFDF8;
   }
   *{box-sizing:border-box;}
@@ -38,7 +38,8 @@
     padding:14px 22px;border-radius:10px;text-decoration:none;
   }
   .btn.primary{background:var(--a);color:#fff;border-radius:100px;transition:transform .15s ease, opacity .15s ease;}
-  .btn.primary:hover{opacity:.92;transform:translateY(-2px);}
+  .btn.primary:hover{opacity:.95;transform:translateY(-2px) scale(1.03);}
+  .btn.primary:active{transform:translateY(0) scale(.97);}
   .btn.ghost{border:1px solid var(--line);color:var(--ink);border-radius:100px;background:transparent;cursor:pointer;font:inherit;}
   .btn.ghost:hover{border-color:var(--ink);transform:translateY(-2px);}
 
@@ -83,13 +84,15 @@
   .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
   .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
   @media (max-width:760px){.grid{grid-template-columns:1fr;} .grid3{grid-template-columns:1fr;}}
-  .card{background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);border-radius:16px;padding:26px 24px;}
+  .card{background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);border-radius:16px;padding:26px 24px;transition:transform .2s ease, box-shadow .2s ease;}
+  .card:hover{transform:translateY(-5px) rotate(-1deg);box-shadow:0 14px 30px -12px rgba(40,25,10,0.28);}
   .card h3{font-family:'Fraunces',serif;font-weight:500;font-size:19px;margin:0 0 10px;}
   .card p{font-size:15px;line-height:1.55;color:var(--ink-soft);margin:0;}
   .tag{display:inline-block;font-family:'Karla',sans-serif;font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--a);background:rgba(122,35,51,0.08);padding:4px 9px;border-radius:100px;margin-bottom:12px;}
 
-  .menu-card{background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);border-radius:16px;padding:22px 20px;display:flex;flex-direction:column;}
-  .menu-card h3{font-family:'Fraunces',serif;font-weight:500;font-size:18px;margin:0 0 4px;}
+  .menu-card{background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);border-radius:16px;padding:22px 20px;display:flex;flex-direction:column;transition:transform .2s ease, box-shadow .2s ease;}
+  .menu-card:hover{transform:translateY(-5px) rotate(1deg);box-shadow:0 14px 30px -12px rgba(40,25,10,0.28);}
+  .menu-card h3{font-family:'Fraunces',serif;font-weight:600;font-size:18px;margin:0 0 4px;width:fit-content;background:linear-gradient(to top, var(--fun) 0 32%, transparent 32%);padding:0 2px;}
   .menu-card .menu-tag{font-family:'Karla',sans-serif;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--a);margin:0 0 10px;}
   .menu-card p.desc{font-size:13.5px;line-height:1.5;color:var(--ink-soft);margin:0 0 12px;flex:1;}
   .menu-card p.contains{font-size:12px;line-height:1.5;color:var(--ink-soft);margin:0 0 10px;}
@@ -101,7 +104,7 @@
   .quick-nav a{font-family:'Karla',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.02em;color:var(--a);background:var(--wash);border-radius:100px;padding:8px 16px;text-decoration:none;scroll-margin-top:70px;}
   .quick-nav a:hover{opacity:.8;}
   .menu-card{position:relative;}
-  .popular-badge{position:absolute;top:-11px;right:16px;background:var(--a);color:#fff;font-family:'Karla',sans-serif;font-weight:700;font-size:10px;letter-spacing:.03em;padding:5px 12px;border-radius:100px;box-shadow:0 3px 8px rgba(0,0,0,0.2);}
+  .popular-badge{position:absolute;top:-13px;right:16px;background:var(--fun);color:var(--fun-ink);font-family:'Karla',sans-serif;font-weight:800;font-size:10.5px;letter-spacing:.03em;padding:6px 13px;border-radius:100px;box-shadow:0 4px 10px rgba(0,0,0,0.18);transform:rotate(4deg);}
   .subsection-head{margin:52px 0 18px;scroll-margin-top:70px;}
   .subsection-head h3{font-family:'Fraunces',serif;font-weight:500;font-size:20px;margin:0 0 6px;}
   .subsection-head p{font-size:14px;color:var(--ink-soft);margin:0;max-width:600px;line-height:1.5;}
@@ -111,7 +114,8 @@
   .flower-intro p{font-size:13.5px;line-height:1.55;color:var(--ink-soft);margin:0 0 14px;}
   .flower-intro p:last-child{margin-bottom:0;}
 
-  .tier-card{background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);border-radius:16px;padding:24px 20px;text-align:center;}
+  .tier-card{background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);border-radius:16px;padding:24px 20px;text-align:center;transition:transform .2s ease, box-shadow .2s ease;}
+  .tier-card:hover{transform:translateY(-5px) rotate(-0.75deg);box-shadow:0 14px 30px -12px rgba(40,25,10,0.28);}
   .tier-card .tier-name{font-family:'Karla',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--a);margin:0 0 14px;}
   .tier-card .btn{width:100%;justify-content:center;}
 
@@ -131,6 +135,7 @@
   .note a{color:var(--a);font-weight:600;text-decoration:underline;}
 
   footer{border-top:1px solid var(--line);padding:36px 28px 56px;}
+  footer .tagline{font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:var(--ink-soft);margin:0 0 16px;}
   footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:'Karla',sans-serif;font-weight:600;font-size:13px;color:var(--ink-soft);}
   footer a{border-bottom:1px solid var(--line);text-decoration:none;}
 </style>
@@ -212,7 +217,7 @@
 
   <div class="subsection-head" id="iv-menu">
     <h3>IV Drip Menu</h3>
-    <p>Custom hydration blends administered in the comfort of your home or office.</p>
+    <p>Custom hydration blends, mixed for you and delivered wherever you are — couch included.</p>
   </div>
   <div class="grid3">
     <div class="menu-card">
@@ -328,7 +333,7 @@
 
   <div class="subsection-head" id="shot-bar">
     <h3>Shot Bar</h3>
-    <p>Quick intramuscular vitamin and mineral injections to keep you feeling your best.</p>
+    <p>Quick jabs, big payoff — pop in for a shot and get back to your day.</p>
   </div>
   <div class="grid3">
     <div class="menu-card">
@@ -517,6 +522,7 @@
 </section>
 
 <footer>
+  <div class="wrap"><p class="tagline">Feel better. Look elevated. Repeat.</p></div>
   <div class="wrap">
     <span>Dallas, TX</span>
     <a href="tel:4695701329">469-570-1329</a>

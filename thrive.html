@@ -10,7 +10,7 @@
 <style>
   :root{
     --a:#3F5A3A; --b:#C4703F; --wash:#E4EBDB;
-    --paper:#FBF6EC; --ink:#1C2320; --ink-soft:#4A524C; --line:rgba(28,35,32,0.14);
+    --fun:#FFC93C; --fun-ink:#5C3A00; --paper:#FBF6EC; --ink:#1C2320; --ink-soft:#4A524C; --line:rgba(28,35,32,0.14);
     --card:#FFFDF8;
   }
   *{box-sizing:border-box;}
@@ -35,7 +35,8 @@
   .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Karla',sans-serif;font-weight:700;font-size:13px;letter-spacing:.05em;text-transform:uppercase;padding:14px 22px;border-radius:100px;text-decoration:none;border:none;cursor:pointer;font-weight:inherit;}
   .btn.primary{background:var(--a);color:#fff;transition:transform .15s ease, opacity .15s ease;}
   .price-badge{display:inline-flex;align-items:center;gap:8px;font-family:'Karla',sans-serif;font-size:12.5px;padding:8px 16px;border-radius:100px;margin:0 0 22px;border:1px solid var(--line);color:var(--ink-soft);}
-  .btn.primary:hover{opacity:.92;transform:translateY(-2px);}
+  .btn.primary:hover{opacity:.95;transform:translateY(-2px) scale(1.03);}
+  .btn.primary:active{transform:translateY(0) scale(.97);}
   .btn.ghost{border:1px solid var(--line);color:var(--ink);background:transparent;}
   .btn.ghost:hover{border-color:var(--ink);transform:translateY(-2px);}
 
@@ -67,7 +68,8 @@
   .about-text p{color:var(--ink-soft);font-size:15px;line-height:1.6;margin:0 0 14px;}
   .credentials{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;}
   @media (max-width:500px){.credentials{grid-template-columns:1fr;}}
-  .credential-card{background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);border-radius:18px;padding:18px 16px;}
+  .credential-card{background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);border-radius:18px;padding:18px 16px;transition:transform .2s ease, box-shadow .2s ease;}
+  .credential-card:hover{transform:translateY(-5px) rotate(-1deg);box-shadow:0 14px 30px -12px rgba(40,25,10,0.28);}
   .credential-card .role{font-family:'Karla',sans-serif;font-size:10.5px;text-transform:uppercase;color:var(--a);margin-bottom:4px;}
   .credential-card .name{font-family:'Fraunces',serif;font-size:16px;font-weight:600;margin-bottom:4px;}
   .credential-card .detail{font-size:11.5px;color:var(--ink-soft);}
@@ -75,7 +77,8 @@
   .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
   @media (max-width:900px){.grid3{grid-template-columns:repeat(2,1fr);}}
   @media (max-width:560px){.grid3{grid-template-columns:1fr;}}
-  .room-card{background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);border-radius:20px;padding:22px 20px;}
+  .room-card{background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);border-radius:20px;padding:22px 20px;transition:transform .2s ease, box-shadow .2s ease;}
+  .room-card:hover{transform:translateY(-5px) rotate(1deg);box-shadow:0 14px 30px -12px rgba(40,25,10,0.28);}
   .room-card .icon-circle{width:40px;height:40px;border-radius:50%;background:var(--room-color,var(--a));display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
   .room-card h3{font-family:'Fraunces',serif;font-weight:500;font-size:16px;margin:0 0 6px;}
   .room-card p{font-size:13px;color:var(--ink-soft);margin:0;line-height:1.5;}
@@ -92,6 +95,7 @@
   .contact-box .line b{display:block;font-family:'Karla',sans-serif;font-size:10.5px;text-transform:uppercase;color:var(--a);margin-bottom:2px;}
 
   footer{border-top:1px solid var(--line);padding:36px 28px 56px;margin-top:20px;}
+  footer .tagline{font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:var(--ink-soft);margin:0 0 16px;}
   footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:'Karla',sans-serif;font-weight:600;font-size:13px;color:var(--ink-soft);}
   footer a{border-bottom:1px solid var(--line);text-decoration:none;}
 </style>
@@ -211,6 +215,7 @@
 </section>
 
 <footer>
+  <div class="wrap"><p class="tagline">Growth looks good on everyone.</p></div>
   <div class="wrap">
     <span>Ennis, TX</span>
     <a href="tel:4695701329">469-570-1329</a>

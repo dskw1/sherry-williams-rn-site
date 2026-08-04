@@ -13,6 +13,8 @@
     --ink:#1C2320;
     --ink-soft:#4A524C;
     --line: rgba(28,35,32,0.14);
+    --fun:#FFC93C;
+    --fun-ink:#5C3A00;
 
     --wow-a:#7A2333; --wow-b:#D9A45C;
     --bump-a:#26418C; --bump-b:#B9CBEA;
@@ -190,7 +192,8 @@
     box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);
     transition:transform .18s ease, box-shadow .18s ease;
   }
-  .chart:hover{transform:translateY(-3px);box-shadow:0 16px 30px -14px rgba(28,35,32,0.28);}
+  .chart:nth-child(odd):hover{transform:translateY(-5px) rotate(-1deg);box-shadow:0 16px 30px -14px rgba(28,35,32,0.28);}
+  .chart:nth-child(even):hover{transform:translateY(-5px) rotate(1deg);box-shadow:0 16px 30px -14px rgba(28,35,32,0.28);}
   .chart:focus-visible{outline:3px solid var(--ink);outline-offset:2px;}
 
   .tab{
@@ -245,6 +248,7 @@
     border-top:1px solid var(--line);
     padding:36px 28px 56px;
   }
+  footer .tagline{font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:var(--ink-soft);margin:0 0 16px;text-align:center;}
   footer .wrap{
     display:flex;
     justify-content:space-between;
@@ -350,6 +354,7 @@
 </nav>
 
 <footer>
+  <p class="tagline">Four businesses, one nurse who never stops caring.</p>
   <div class="wrap">
     <span>Dallas, TX</span>
     <a href="tel:4695701329">469-570-1329</a>
