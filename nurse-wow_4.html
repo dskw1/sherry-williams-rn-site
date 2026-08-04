@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nurse WOW — Concierge Health &amp; Wellness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Karla:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --a:#7A2333; --b:#D9A45C; --wash:#F3E3C6;
+    --paper:#FBF6EC; --ink:#1C2320; --ink-soft:#4A524C; --line:rgba(28,35,32,0.14);
+    --card:#FFFDF8;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:linear-gradient(180deg, var(--wash) 0%, var(--paper) 480px);color:var(--ink);font-family:'Karla',sans-serif;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+  a{color:inherit;}
+
+  .tabbar{background:var(--a);color:#fff;position:sticky;top:0;z-index:100;box-shadow:0 4px 14px rgba(0,0,0,0.12);}
+  .tabbar .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;font-family:'Karla',sans-serif;font-weight:700;font-size:13px;letter-spacing:.05em;}
+  .tabbar a{text-decoration:none;opacity:.9;}
+  .tabbar a:hover{opacity:1;text-decoration:underline;}
+
+  header.hero{padding:72px 28px 56px;display:flex;gap:36px;max-width:1080px;margin:0 auto;}
+  @media (max-width:760px){header.hero{flex-direction:column;padding:48px 20px;}}
+  .spine{width:6px;background:var(--b);border-radius:10px;flex-shrink:0;}
+  .hero-copy{flex:1;}
+  .eyebrow{font-family:'Karla',sans-serif;font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--a);margin:0 0 16px;display:inline-flex;align-items:center;gap:9px;}
+  h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(34px,5.2vw,54px);line-height:1.06;margin:0 0 18px;letter-spacing:-0.01em;}
+  .hero-copy p.lede{font-size:18px;line-height:1.6;color:var(--ink-soft);max-width:560px;margin:0 0 30px;}
+
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Karla',sans-serif;font-weight:700;font-size:13px;letter-spacing:.05em;text-transform:uppercase;
+    padding:14px 22px;border-radius:10px;text-decoration:none;
+  }
+  .btn.primary{background:var(--a);color:#fff;border-radius:100px;transition:transform .15s ease, opacity .15s ease;}
+  .btn.primary:hover{opacity:.92;transform:translateY(-2px);}
+  .btn.ghost{border:1px solid var(--line);color:var(--ink);border-radius:100px;background:transparent;cursor:pointer;font:inherit;}
+  .btn.ghost:hover{border-color:var(--ink);transform:translateY(-2px);}
+
+  .price-badge{display:inline-flex;align-items:center;gap:8px;font-family:'Karla',sans-serif;font-size:12.5px;padding:8px 16px;border-radius:100px;margin:0 0 22px;border:1px solid var(--line);color:var(--ink-soft);}
+
+  .service-area{max-width:1080px;margin:0 auto;padding:0 28px 12px;}
+  .service-area .box{padding:14px 20px;background:#fff;border:1px solid var(--line);border-radius:16px;font-size:14px;color:var(--ink-soft);display:flex;align-items:center;gap:10px;}
+
+  .founder-note{max-width:1080px;margin:0 auto;padding:8px 28px 8px;}
+  .founder-note .box{background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);border-radius:18px;padding:26px 26px;display:flex;gap:20px;align-items:flex-start;}
+  .founder-note .photoframe{width:64px;height:64px;border-radius:50%;flex-shrink:0;}
+  .founder-note .photoframe span{display:none;}
+  .founder-note p{font-size:15px;line-height:1.6;color:var(--ink);margin:0 0 8px;}
+  .founder-note p:last-of-type{margin-bottom:0;}
+  .founder-note cite{display:block;margin-top:10px;font-family:'Karla',sans-serif;font-style:normal;font-size:12px;color:var(--ink-soft);}
+
+  section.howworks{max-width:1080px;margin:0 auto;padding:36px 28px 4px;}
+  .hw-label{font-family:'Karla',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 16px;}
+  .hw-steps{display:flex;gap:18px;}
+  @media (max-width:760px){.hw-steps{flex-direction:column;}}
+  .hw-step{flex:1;background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);border-radius:14px;padding:20px 22px;display:flex;gap:14px;}
+  .hw-num{font-family:'Fraunces',serif;font-size:26px;color:var(--a);flex-shrink:0;}
+  .hw-step h4{margin:0 0 6px;font-family:'Fraunces',serif;font-weight:500;font-size:16px;}
+  .hw-step p{margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5;}
+
+  .cbform{display:none;margin-top:18px;max-width:360px;background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);border-radius:16px;padding:20px;}
+  .inline-form{display:none;margin-top:14px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px;}
+  .inline-form.open{display:block;}
+  .inline-form input{width:100%;box-sizing:border-box;padding:9px 11px;border-radius:10px;border:1px solid var(--line);font-family:'Karla',sans-serif;font-size:13px;margin-bottom:8px;background:#fff;color:var(--ink);}
+  .inline-form button{width:100%;justify-content:center;font-size:11px;padding:9px 14px;}
+  .inline-form .sent{display:none;font-size:12px;color:var(--ink-soft);margin-top:8px;margin-bottom:0;}
+  .cbform.open{display:block;}
+  .cbform label{display:block;font-family:'Karla',sans-serif;font-size:11px;text-transform:uppercase;color:var(--ink-soft);margin:0 0 6px;}
+  .cbform input,.cbform select{width:100%;box-sizing:border-box;padding:10px 12px;border-radius:12px;border:1px solid var(--line);font-family:'Karla',sans-serif;font-size:14px;margin-bottom:12px;background:var(--paper);color:var(--ink);}
+  .cbform .sent{display:none;font-size:14px;color:var(--ink-soft);}
+
+  section.services{padding:20px 28px 80px;max-width:1080px;margin:0 auto;}
+  .section-head{display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:32px;}
+  .section-head h2{font-family:'Fraunces',serif;font-weight:500;font-size:26px;margin:0;}
+  .section-head span{font-family:'Karla',sans-serif;font-size:12px;color:var(--ink-soft);}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  @media (max-width:760px){.grid{grid-template-columns:1fr;} .grid3{grid-template-columns:1fr;}}
+  .card{background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);border-radius:16px;padding:26px 24px;}
+  .card h3{font-family:'Fraunces',serif;font-weight:500;font-size:19px;margin:0 0 10px;}
+  .card p{font-size:15px;line-height:1.55;color:var(--ink-soft);margin:0;}
+  .tag{display:inline-block;font-family:'Karla',sans-serif;font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--a);background:rgba(122,35,51,0.08);padding:4px 9px;border-radius:100px;margin-bottom:12px;}
+
+  .menu-card{background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);border-radius:16px;padding:22px 20px;display:flex;flex-direction:column;}
+  .menu-card h3{font-family:'Fraunces',serif;font-weight:500;font-size:18px;margin:0 0 4px;}
+  .menu-card .menu-tag{font-family:'Karla',sans-serif;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--a);margin:0 0 10px;}
+  .menu-card p.desc{font-size:13.5px;line-height:1.5;color:var(--ink-soft);margin:0 0 12px;flex:1;}
+  .menu-card p.contains{font-size:12px;line-height:1.5;color:var(--ink-soft);margin:0 0 10px;}
+  .menu-card p.contains b{color:var(--ink);font-weight:600;}
+  .menu-card p.rec{font-size:11.5px;color:var(--ink-soft);font-style:italic;margin:0 0 14px;}
+  .menu-card .btn{align-self:flex-start;}
+
+  .quick-nav{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px;}
+  .quick-nav a{font-family:'Karla',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.02em;color:var(--a);background:var(--wash);border-radius:100px;padding:8px 16px;text-decoration:none;scroll-margin-top:70px;}
+  .quick-nav a:hover{opacity:.8;}
+  .menu-card{position:relative;}
+  .popular-badge{position:absolute;top:-11px;right:16px;background:var(--a);color:#fff;font-family:'Karla',sans-serif;font-weight:700;font-size:10px;letter-spacing:.03em;padding:5px 12px;border-radius:100px;box-shadow:0 3px 8px rgba(0,0,0,0.2);}
+  .subsection-head{margin:52px 0 18px;scroll-margin-top:70px;}
+  .subsection-head h3{font-family:'Fraunces',serif;font-weight:500;font-size:20px;margin:0 0 6px;}
+  .subsection-head p{font-size:14px;color:var(--ink-soft);margin:0;max-width:600px;line-height:1.5;}
+
+  .flower-intro{background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);border-radius:16px;padding:24px 26px;margin-bottom:20px;}
+  .flower-intro h4{font-family:'Fraunces',serif;font-weight:500;font-size:16px;margin:0 0 6px;}
+  .flower-intro p{font-size:13.5px;line-height:1.55;color:var(--ink-soft);margin:0 0 14px;}
+  .flower-intro p:last-child{margin-bottom:0;}
+
+  .tier-card{background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);border-radius:16px;padding:24px 20px;text-align:center;}
+  .tier-card .tier-name{font-family:'Karla',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--a);margin:0 0 14px;}
+  .tier-card .btn{width:100%;justify-content:center;}
+
+  .photoframe{background:linear-gradient(160deg, var(--wash) 0%, #EFE6DD 100%);border:1.5px dashed var(--b);border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--ink-soft);text-align:center;padding:10px;}
+  .photoframe svg{opacity:.5;}
+  .photoframe span{font-family:'Karla',sans-serif;font-size:10.5px;line-height:1.4;max-width:180px;}
+  .hero-photo{width:260px;height:220px;flex-shrink:0;}
+  @media (max-width:760px){.hero-photo{width:100%;height:200px;}}
+
+  .quote{max-width:1080px;margin:40px auto 0;padding:0 28px;}
+  .quote .box{display:flex;gap:16px;align-items:center;background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);border-radius:20px;padding:20px 22px;}
+  .quote .photoframe{width:60px;height:60px;border-radius:50%;flex-shrink:0;}
+  .quote blockquote{font-family:'Fraunces',serif;font-style:italic;font-size:15px;line-height:1.55;margin:0;}
+  .quote cite{display:block;margin-top:6px;font-family:'Karla',sans-serif;font-style:normal;font-size:11.5px;color:var(--ink-soft);}
+
+  .note{margin-top:56px;padding:24px 26px;border:1px dashed var(--line);border-radius:16px;font-size:15px;line-height:1.6;color:var(--ink-soft);}
+  .note a{color:var(--a);font-weight:600;text-decoration:underline;}
+
+  footer{border-top:1px solid var(--line);padding:36px 28px 56px;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:'Karla',sans-serif;font-weight:600;font-size:13px;color:var(--ink-soft);}
+  footer a{border-bottom:1px solid var(--line);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<div class="tabbar">
+  <div class="wrap">
+    <span>SHERRY WILLIAMS RN — HEALTH &amp; WELLNESS</span>
+    <a href="index.html">← All services</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="spine"></div>
+  <div class="hero-copy">
+    <p class="eyebrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3c3 4 6 7.5 6 11a6 6 0 1 1-12 0c0-3.5 3-7 6-11z"/></svg>Nurse WOW · Concierge Care</p>
+    <h1>We come to you. That's the whole point.</h1>
+    <p class="lede">Concierge IV hydration, immunity and vitamin injections, weight-loss support, and specialized hyperemesis treatment — delivered by an RN, in your own space, in the Dallas–Fort Worth area.</p>
+    <p class="price-badge">Premium concierge care — not a discount clinic, and not out of reach</p>
+    <div class="cta-row">
+      <button class="btn primary" onclick="requestService('General inquiry')">Request a callback</button>
+      <a class="btn ghost" href="tel:4695701329">Call or text 469-570-1329</a>
+    </div>
+    <form class="cbform" id="cbform" action="https://formspree.io/f/xeajjaqv" method="POST" onsubmit="return submitRequest(event)">
+      <input type="hidden" name="interested_in" id="cb-interested" value="General inquiry">
+      <input type="hidden" name="_subject" value="New request — Nurse WOW">
+      <label>Name</label>
+      <input type="text" name="name" placeholder="Your name" required>
+      <label>Phone</label>
+      <input type="tel" name="phone" placeholder="(214) 555-0100" required>
+      <label>Preferred date</label>
+      <input type="date" name="preferred_date">
+      <label>Best time to call</label>
+      <select name="best_time"><option>Morning</option><option>Afternoon</option><option>Evening</option></select>
+      <p style="font-size:12px;color:var(--ink-soft);margin:0 0 12px;" id="cb-service-line"></p>
+      <button class="btn primary" type="submit" style="width:100%;justify-content:center" id="cb-submit-btn">Send request</button>
+      <p class="sent" id="cbsent">Thanks — Sherry's team will call you back within one business day.</p>
+    </form>
+  </div>
+  <div class="photoframe hero-photo">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-4-4 3-3-2-6 5"/></svg>
+    <span>Photo: Sherry administering an IV, smiling</span>
+  </div>
+</header>
+
+<div class="service-area"><div class="box">Serving Dallas, Fort Worth, Plano, and the greater DFW metro.</div></div>
+
+<div class="founder-note">
+  <div class="box">
+    <div class="photoframe"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-4-4 3-3-2-6 5"/></svg></div>
+    <div>
+      <p>I built Nurse WOW out of my own remission. I was diagnosed with Lupus in 2005, and after the plan my doctors gave me stopped working, I built my own path back to health — IV hydration, B-12 shots, and workouts that sweat out impurities. It put my Lupus into remission.</p>
+      <p>If it worked for me, I knew it could work for other people. That's the whole business, honestly. Get a drip, honey — we're here for that.</p>
+      <cite>— Sherry Williams, RN, founder</cite>
+    </div>
+  </div>
+</div>
+
+<section class="howworks">
+  <p class="hw-label">How it works</p>
+  <div class="hw-steps">
+    <div class="hw-step"><span class="hw-num">1</span><div><h4>Request a callback</h4><p>Tell us a little about what you need and the best time to reach you.</p></div></div>
+    <div class="hw-step"><span class="hw-num">2</span><div><h4>Talk it through with Sherry</h4><p>She'll call you back to answer questions and set up a visit or a call — whichever fits you.</p></div></div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="section-head">
+    <h2>What we offer</h2>
+    <span>Concierge · Dallas–Fort Worth</span>
+  </div>
+
+  <div class="quick-nav">
+    <a href="#iv-menu">IV Drip Menu</a>
+    <a href="#shot-bar">Shot Bar</a>
+    <a href="#wow-flower">WOW Flower</a>
+  </div>
+
+  <div class="subsection-head" id="iv-menu">
+    <h3>IV Drip Menu</h3>
+    <p>Custom hydration blends administered in the comfort of your home or office.</p>
+  </div>
+  <div class="grid3">
+    <div class="menu-card">
+      <span class="popular-badge">★ Most Popular</span>
+      <h3>'Glow Getter'</h3>
+      <p class="menu-tag">Beauty + Energy</p>
+      <p class="desc">This beauty vitamin formula targets collagen-building &amp; anti-aging. Ideal for hair, skin &amp; nails.</p>
+      <p class="contains"><b>Contains:</b> B-Complex, Vitamin C, Biotin, B12, Glutathione</p>
+      <p class="rec">Recommended: 1–4x a month as desired</p>
+      <button class="btn primary" type="button" onclick="toggleInlineForm('f-glowgetter')">Schedule now</button>
+      <form class="inline-form" id="f-glowgetter" action="https://formspree.io/f/xeajjaqv" method="POST" onsubmit="return submitRequest(event)">
+        <input type="hidden" name="_subject" value="New IV Drip request — Glow Getter">
+        <input type="hidden" name="interested_in" value="IV Drip: Glow Getter">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="tel" name="phone" placeholder="Phone number" required>
+        <input type="date" name="preferred_date">
+        <input type="text" name="preferred_time" placeholder="Preferred time (e.g. mornings, after 3pm)">
+        <button class="btn primary" type="submit">Send request</button>
+        <p class="sent">Thanks — we'll follow up soon!</p>
+      </form>
+    </div>
+    <div class="menu-card">
+      <h3>'Queen to Be'</h3>
+      <p class="menu-tag">Beauty + NAD</p>
+      <p class="desc">This beauty formula targets collagen-building &amp; anti-aging for hair, skin &amp; nails, plus NAD.</p>
+      <p class="contains"><b>Contains:</b> B-Complex, Vitamin C, Biotin, B12, Glutathione + NAD</p>
+      <p class="rec">Recommended: 1–4x a month as desired</p>
+      <button class="btn primary" type="button" onclick="toggleInlineForm('f-queentobe')">Schedule now</button>
+      <form class="inline-form" id="f-queentobe" action="https://formspree.io/f/xeajjaqv" method="POST" onsubmit="return submitRequest(event)">
+        <input type="hidden" name="_subject" value="New IV Drip request — Queen to Be">
+        <input type="hidden" name="interested_in" value="IV Drip: Queen to Be">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="tel" name="phone" placeholder="Phone number" required>
+        <input type="date" name="preferred_date">
+        <input type="text" name="preferred_time" placeholder="Preferred time (e.g. mornings, after 3pm)">
+        <button class="btn primary" type="submit">Send request</button>
+        <p class="sent">Thanks — we'll follow up soon!</p>
+      </form>
+    </div>
+    <div class="menu-card">
+      <h3>'Chile Not Today'</h3>
+      <p class="menu-tag">Immunity IV</p>
+      <p class="desc">Feeling under the weather? Boost your immune system and aid in cold and flu prevention.</p>
+      <p class="contains"><b>Contains:</b> Zinc Cl, Vitamin C, B-Complex</p>
+      <p class="rec">Recommended: 2x a month during peak cold &amp; flu season, or before/after traveling</p>
+      <button class="btn primary" type="button" onclick="toggleInlineForm('f-chilenottodayiv')">Schedule now</button>
+      <form class="inline-form" id="f-chilenottodayiv" action="https://formspree.io/f/xeajjaqv" method="POST" onsubmit="return submitRequest(event)">
+        <input type="hidden" name="_subject" value="New IV Drip request — Chile Not Today">
+        <input type="hidden" name="interested_in" value="IV Drip: Chile Not Today">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="tel" name="phone" placeholder="Phone number" required>
+        <input type="date" name="preferred_date">
+        <input type="text" name="preferred_time" placeholder="Preferred time (e.g. mornings, after 3pm)">
+        <button class="btn primary" type="submit">Send request</button>
+        <p class="sent">Thanks — we'll follow up soon!</p>
+      </form>
+    </div>
+    <div class="menu-card">
+      <h3>'Hydrate'</h3>
+      <p class="menu-tag">Need Hydration?</p>
+      <p class="desc">Rebalance your body — fortified with amino acids, electrolytes, and antioxidants to help maximize performance and recovery.</p>
+      <p class="contains"><b>Contains:</b> Magnesium, Potassium, B Vitamins, Sulfate, Calcium</p>
+      <p class="rec">Recommended: 2–3x a month to ensure optimal hydration</p>
+      <button class="btn primary" type="button" onclick="toggleInlineForm('f-hydrate')">Schedule now</button>
+      <form class="inline-form" id="f-hydrate" action="https://formspree.io/f/xeajjaqv" method="POST" onsubmit="return submitRequest(event)">
+        <input type="hidden" name="_subject" value="New IV Drip request — Hydrate">
+        <input type="hidden" name="interested_in" value="IV Drip: Hydrate">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="tel" name="phone" placeholder="Phone number" required>
+        <input type="date" name="preferred_date">
+        <input type="text" name="preferred_time" placeholder="Preferred time (e.g. mornings, after 3pm)">
+        <button class="btn primary" type="submit">Send request</button>
+        <p class="sent">Thanks — we'll follow up soon!</p>
+      </form>
+    </div>
+    <div class="menu-card">
+      <h3>'The After Party'</h3>
+      <p class="menu-tag">The Best Cure for a Hangover</p>
+      <p class="desc">Too much partying the night before? This cocktail will make you feel renewed, restored, and back on your feet.</p>
+      <p class="contains"><b>Contains:</b> B-Complex, Magnesium Chloride, Zinc, Manganese, Copper, Selenium, Zofran, Toradol</p>
+      <p class="rec">Recommended: as needed to alleviate hangover symptoms, nausea, and dehydration</p>
+      <button class="btn primary" type="button" onclick="toggleInlineForm('f-afterparty')">Schedule now</button>
+      <form class="inline-form" id="f-afterparty" action="https://formspree.io/f/xeajjaqv" method="POST" onsubmit="return submitRequest(event)">
+        <input type="hidden" name="_subject" value="New IV Drip request — The After Party">
+        <input type="hidden" name="interested_in" value="IV Drip: The After Party">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="tel" name="phone" placeholder="Phone number" required>
+        <input type="date" name="preferred_date">
+        <input type="text" name="preferred_time" placeholder="Preferred time (e.g. mornings, after 3pm)">
+        <button class="btn primary" type="submit">Send request</button>
+        <p class="sent">Thanks — we'll follow up soon!</p>
+      </form>
+    </div>
+    <div class="menu-card">
+      <h3>'Rejuvenate'</h3>
+      <p class="menu-tag">Myer+ · For Overall Health</p>
+      <p class="desc">The "gold standard" for overall wellness — effective in treating a wide range of conditions.</p>
+      <p class="contains"><b>Contains:</b> B-Complex, B12, Magnesium Chloride, Calcium Gluconate, Vitamin C</p>
+      <p class="rec">Recommended: 1–4x a month as desired</p>
+      <button class="btn primary" type="button" onclick="toggleInlineForm('f-rejuvenate')">Schedule now</button>
+      <form class="inline-form" id="f-rejuvenate" action="https://formspree.io/f/xeajjaqv" method="POST" onsubmit="return submitRequest(event)">
+        <input type="hidden" name="_subject" value="New IV Drip request — Rejuvenate">
+        <input type="hidden" name="interested_in" value="IV Drip: Rejuvenate">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="tel" name="phone" placeholder="Phone number" required>
+        <input type="date" name="preferred_date">
+        <input type="text" name="preferred_time" placeholder="Preferred time (e.g. mornings, after 3pm)">
+        <button class="btn primary" type="submit">Send request</button>
+        <p class="sent">Thanks — we'll follow up soon!</p>
+      </form>
+    </div>
+  </div>
+
+  <div class="subsection-head" id="shot-bar">
+    <h3>Shot Bar</h3>
+    <p>Quick intramuscular vitamin and mineral injections to keep you feeling your best.</p>
+  </div>
+  <div class="grid3">
+    <div class="menu-card">
+      <span class="popular-badge">★ Most Popular</span>
+      <h3>'Energy'</h3>
+      <p class="menu-tag">B-12 Injections</p>
+      <p class="desc">Tired during the day and can't produce enough energy? Helps with energy and balance — better mood, deeper sleep, a balanced immune system, mental clarity, and weight loss by increasing metabolism.</p>
+      <button class="btn primary" type="button" onclick="toggleInlineForm('f-energy')">Schedule now</button>
+      <form class="inline-form" id="f-energy" action="https://formspree.io/f/xeajjaqv" method="POST" onsubmit="return submitRequest(event)">
+        <input type="hidden" name="_subject" value="New Shot Bar request — Energy">
+        <input type="hidden" name="interested_in" value="Shot Bar: Energy">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="tel" name="phone" placeholder="Phone number" required>
+        <input type="date" name="preferred_date">
+        <input type="text" name="preferred_time" placeholder="Preferred time (e.g. mornings, after 3pm)">
+        <button class="btn primary" type="submit">Send request</button>
+        <p class="sent">Thanks — we'll follow up soon!</p>
+      </form>
+    </div>
+    <div class="menu-card">
+      <h3>'Slim Thic'</h3>
+      <p class="menu-tag">Weight Loss Injections</p>
+      <p class="desc">Skip the surgery. Aids in regulating glucose and insulin levels, removes fat, reduces sugar cravings, boosts your immune system, and increases metabolism.</p>
+      <button class="btn primary" type="button" onclick="toggleInlineForm('f-slimthic')">Schedule now</button>
+      <form class="inline-form" id="f-slimthic" action="https://formspree.io/f/xeajjaqv" method="POST" onsubmit="return submitRequest(event)">
+        <input type="hidden" name="_subject" value="New Shot Bar request — Slim Thic">
+        <input type="hidden" name="interested_in" value="Shot Bar: Slim Thic">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="tel" name="phone" placeholder="Phone number" required>
+        <input type="date" name="preferred_date">
+        <input type="text" name="preferred_time" placeholder="Preferred time (e.g. mornings, after 3pm)">
+        <button class="btn primary" type="submit">Send request</button>
+        <p class="sent">Thanks — we'll follow up soon!</p>
+      </form>
+    </div>
+    <div class="menu-card">
+      <h3>'Glow Up'</h3>
+      <p class="menu-tag">Beauty Injections</p>
+      <p class="desc">Searching for a beauty boost? Enhance your radiance and elevate your well-being — a brighter complexion, renewed confidence.</p>
+      <button class="btn primary" type="button" onclick="toggleInlineForm('f-glowup')">Schedule now</button>
+      <form class="inline-form" id="f-glowup" action="https://formspree.io/f/xeajjaqv" method="POST" onsubmit="return submitRequest(event)">
+        <input type="hidden" name="_subject" value="New Shot Bar request — Glow Up">
+        <input type="hidden" name="interested_in" value="Shot Bar: Glow Up">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="tel" name="phone" placeholder="Phone number" required>
+        <input type="date" name="preferred_date">
+        <input type="text" name="preferred_time" placeholder="Preferred time (e.g. mornings, after 3pm)">
+        <button class="btn primary" type="submit">Send request</button>
+        <p class="sent">Thanks — we'll follow up soon!</p>
+      </form>
+    </div>
+    <div class="menu-card">
+      <h3>'Chile Not Today'</h3>
+      <p class="menu-tag">Immunity Injections</p>
+      <p class="desc">Ready to strengthen your immunity? Fortifies your defenses and keeps you feeling your best, with enhanced immune function and resilience.</p>
+      <button class="btn primary" type="button" onclick="toggleInlineForm('f-chilenottodayshot')">Schedule now</button>
+      <form class="inline-form" id="f-chilenottodayshot" action="https://formspree.io/f/xeajjaqv" method="POST" onsubmit="return submitRequest(event)">
+        <input type="hidden" name="_subject" value="New Shot Bar request — Chile Not Today">
+        <input type="hidden" name="interested_in" value="Shot Bar: Chile Not Today">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="tel" name="phone" placeholder="Phone number" required>
+        <input type="date" name="preferred_date">
+        <input type="text" name="preferred_time" placeholder="Preferred time (e.g. mornings, after 3pm)">
+        <button class="btn primary" type="submit">Send request</button>
+        <p class="sent">Thanks — we'll follow up soon!</p>
+      </form>
+    </div>
+    <div class="menu-card">
+      <h3>'Queen Charlotte'</h3>
+      <p class="menu-tag">Energy + Weight Loss Injections</p>
+      <p class="desc">An energy boost with the added benefit of potential weight loss. Increased energy, mental clarity, and a metabolism boost.</p>
+      <button class="btn primary" type="button" onclick="toggleInlineForm('f-queencharlotte')">Schedule now</button>
+      <form class="inline-form" id="f-queencharlotte" action="https://formspree.io/f/xeajjaqv" method="POST" onsubmit="return submitRequest(event)">
+        <input type="hidden" name="_subject" value="New Shot Bar request — Queen Charlotte">
+        <input type="hidden" name="interested_in" value="Shot Bar: Queen Charlotte">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="tel" name="phone" placeholder="Phone number" required>
+        <input type="date" name="preferred_date">
+        <input type="text" name="preferred_time" placeholder="Preferred time (e.g. mornings, after 3pm)">
+        <button class="btn primary" type="submit">Send request</button>
+        <p class="sent">Thanks — we'll follow up soon!</p>
+      </form>
+    </div>
+    <div class="menu-card">
+      <h3>'D-Luxe VitaShot'</h3>
+      <p class="menu-tag">Vitamin D Injections</p>
+      <p class="desc">Boosts vitality and balances well-being — improved mood, deeper sleep, enhanced immune function, mental clarity, and a metabolism boost.</p>
+      <button class="btn primary" type="button" onclick="toggleInlineForm('f-dluxevitashot')">Schedule now</button>
+      <form class="inline-form" id="f-dluxevitashot" action="https://formspree.io/f/xeajjaqv" method="POST" onsubmit="return submitRequest(event)">
+        <input type="hidden" name="_subject" value="New Shot Bar request — D-Luxe VitaShot">
+        <input type="hidden" name="interested_in" value="Shot Bar: D-Luxe VitaShot">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="tel" name="phone" placeholder="Phone number" required>
+        <input type="date" name="preferred_date">
+        <input type="text" name="preferred_time" placeholder="Preferred time (e.g. mornings, after 3pm)">
+        <button class="btn primary" type="submit">Send request</button>
+        <p class="sent">Thanks — we'll follow up soon!</p>
+      </form>
+    </div>
+  </div>
+
+  <div class="subsection-head" id="wow-flower">
+    <h3>WOW Flower</h3>
+    <p>Plant-based wellness gummies for relaxation, calm, and a sense of inner peace.</p>
+  </div>
+  <div class="flower-intro">
+    <h4>The power of nature's blossoms</h4>
+    <p>WOW Flower Gummies are made from the finest extracts of nature's vibrant blooms, harnessing the natural goodness of flowers to promote relaxation, calmness, and a sense of inner peace. Meticulously sourced and crafted to meet the highest standards of purity and effectiveness.</p>
+    <p>Find your balance, naturally.</p>
+  </div>
+  <div class="grid3">
+    <div class="tier-card">
+      <p class="tier-name">Trial Pack</p>
+      <button class="btn primary" type="button" onclick="toggleInlineForm('f-flowertrialpack')">Purchase</button>
+      <form class="inline-form" id="f-flowertrialpack" action="https://formspree.io/f/xeajjaqv" method="POST" onsubmit="return submitRequest(event)">
+        <input type="hidden" name="_subject" value="New WOW Flower order — Trial Pack">
+        <input type="hidden" name="interested_in" value="WOW Flower: Trial Pack">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="tel" name="phone" placeholder="Phone number" required>
+        <input type="date" name="preferred_date">
+        <input type="text" name="preferred_time" placeholder="Preferred time (e.g. mornings, after 3pm)">
+        <button class="btn primary" type="submit">Send request</button>
+        <p class="sent">Thanks — we'll follow up soon!</p>
+      </form>
+    </div>
+    <div class="tier-card">
+      <p class="tier-name">25mg</p>
+      <button class="btn primary" type="button" onclick="toggleInlineForm('f-flower25mg')">Purchase</button>
+      <form class="inline-form" id="f-flower25mg" action="https://formspree.io/f/xeajjaqv" method="POST" onsubmit="return submitRequest(event)">
+        <input type="hidden" name="_subject" value="New WOW Flower order — 25mg">
+        <input type="hidden" name="interested_in" value="WOW Flower: 25mg">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="tel" name="phone" placeholder="Phone number" required>
+        <input type="date" name="preferred_date">
+        <input type="text" name="preferred_time" placeholder="Preferred time (e.g. mornings, after 3pm)">
+        <button class="btn primary" type="submit">Send request</button>
+        <p class="sent">Thanks — we'll follow up soon!</p>
+      </form>
+    </div>
+    <div class="tier-card">
+      <p class="tier-name">50mg</p>
+      <button class="btn primary" type="button" onclick="toggleInlineForm('f-flower50mg')">Purchase</button>
+      <form class="inline-form" id="f-flower50mg" action="https://formspree.io/f/xeajjaqv" method="POST" onsubmit="return submitRequest(event)">
+        <input type="hidden" name="_subject" value="New WOW Flower order — 50mg">
+        <input type="hidden" name="interested_in" value="WOW Flower: 50mg">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="tel" name="phone" placeholder="Phone number" required>
+        <input type="date" name="preferred_date">
+        <input type="text" name="preferred_time" placeholder="Preferred time (e.g. mornings, after 3pm)">
+        <button class="btn primary" type="submit">Send request</button>
+        <p class="sent">Thanks — we'll follow up soon!</p>
+      </form>
+    </div>
+  </div>
+
+  <div class="subsection-head">
+    <h3>Additional Services</h3>
+    <p>Beyond IVs, shots, and WOW Flower.</p>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <span class="tag">Weight Loss</span>
+      <h3>Weight-Loss Programs</h3>
+      <p>Personalized plans built from real clinical experience, designed around your goals and your life — not a generic template.</p>
+    </div>
+    <div class="card">
+      <span class="tag">Specialty Care</span>
+      <h3>Hyperemesis &amp; Antepartum Support</h3>
+      <p>Two decades of high-risk labor and delivery experience, focused on real relief for persistent nausea in pregnancy.</p>
+    </div>
+  </div>
+
+  <div class="quote">
+    <div class="box">
+      <div class="photoframe"><span>Photo</span></div>
+      <div>
+        <blockquote>&ldquo;Sherry showed up when I felt awful and left me feeling human again.&rdquo;</blockquote>
+        <cite>— a Nurse WOW client</cite>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">
+    Looking for in-home postpartum care, or baby-and-me classes? That's <a href="baby-bump-dallas.html">Baby Bump Dallas</a> — our sister service built specifically for life after delivery.
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Dallas, TX</span>
+    <a href="tel:4695701329">469-570-1329</a>
+    <a href="mailto:sherryrn@nursewow.net">sherryrn@nursewow.net</a>
+  </div>
+</footer>
+
+<script>
+function requestService(name){
+  var form = document.getElementById('cbform');
+  form.classList.add('open');
+  document.getElementById('cb-interested').value = name;
+  var line = document.getElementById('cb-service-line');
+  if (line) line.textContent = 'Requesting: ' + name;
+  form.scrollIntoView({behavior:'smooth', block:'center'});
+}
+
+function toggleInlineForm(id){
+  document.getElementById(id).classList.toggle('open');
+}
+
+function submitRequest(e){
+  e.preventDefault();
+  var form = e.target;
+  var btn = form.querySelector('[type="submit"]');
+  var sentMsg = form.querySelector('.sent');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: {'Accept': 'application/json'}
+  }).then(function(response){
+    if (response.ok) {
+      if (sentMsg) sentMsg.style.display = 'block';
+      form.reset();
+      btn.style.display = 'none';
+    } else {
+      btn.textContent = 'Something went wrong — try calling instead';
+      btn.disabled = false;
+    }
+  }).catch(function(){
+    btn.textContent = 'Something went wrong — try calling instead';
+    btn.disabled = false;
+  });
+  return false;
+}
+</script>
+</body>
+</html>
