@@ -109,10 +109,6 @@
   .subsection-head h3{font-family:'Fraunces',serif;font-weight:500;font-size:20px;margin:0 0 6px;}
   .subsection-head p{font-size:14px;color:var(--ink-soft);margin:0;max-width:600px;line-height:1.5;}
 
-  .flower-intro{background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);border-radius:16px;padding:24px 26px;margin-bottom:20px;}
-  .flower-intro h4{font-family:'Fraunces',serif;font-weight:500;font-size:16px;margin:0 0 6px;}
-  .flower-intro p{font-size:13.5px;line-height:1.55;color:var(--ink-soft);margin:0 0 14px;}
-  .flower-intro p:last-child{margin-bottom:0;}
 
   .tier-card{background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px -10px rgba(40,25,10,0.16);border-radius:16px;padding:24px 20px;text-align:center;transition:transform .2s ease, box-shadow .2s ease;}
   .tier-card:hover{transform:translateY(-5px) rotate(-0.75deg);box-shadow:0 14px 30px -12px rgba(40,25,10,0.28);}
@@ -212,7 +208,6 @@
   <div class="quick-nav">
     <a href="#iv-menu">IV Drip Menu</a>
     <a href="#shot-bar">Shot Bar</a>
-    <a href="#wow-flower">WOW Flower</a>
   </div>
 
   <div class="subsection-head" id="iv-menu">
@@ -435,63 +430,9 @@
     </div>
   </div>
 
-  <div class="subsection-head" id="wow-flower">
-    <h3>WOW Flower</h3>
-    <p>Plant-based wellness gummies for relaxation, calm, and a sense of inner peace.</p>
-  </div>
-  <div class="flower-intro">
-    <h4>The power of nature's blossoms</h4>
-    <p>WOW Flower Gummies are made from the finest extracts of nature's vibrant blooms, harnessing the natural goodness of flowers to promote relaxation, calmness, and a sense of inner peace. Meticulously sourced and crafted to meet the highest standards of purity and effectiveness.</p>
-    <p>Find your balance, naturally.</p>
-  </div>
-  <div class="grid3">
-    <div class="tier-card">
-      <p class="tier-name">Trial Pack</p>
-      <button class="btn primary" type="button" onclick="toggleInlineForm('f-flowertrialpack')">Purchase</button>
-      <form class="inline-form" id="f-flowertrialpack" action="https://formspree.io/f/xeajjaqv" method="POST" onsubmit="return submitRequest(event)">
-        <input type="hidden" name="_subject" value="New WOW Flower order — Trial Pack">
-        <input type="hidden" name="interested_in" value="WOW Flower: Trial Pack">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="tel" name="phone" placeholder="Phone number" required>
-        <input type="date" name="preferred_date">
-        <input type="text" name="preferred_time" placeholder="Preferred time (e.g. mornings, after 3pm)">
-        <button class="btn primary" type="submit">Send request</button>
-        <p class="sent">Thanks — we'll follow up soon!</p>
-      </form>
-    </div>
-    <div class="tier-card">
-      <p class="tier-name">25mg</p>
-      <button class="btn primary" type="button" onclick="toggleInlineForm('f-flower25mg')">Purchase</button>
-      <form class="inline-form" id="f-flower25mg" action="https://formspree.io/f/xeajjaqv" method="POST" onsubmit="return submitRequest(event)">
-        <input type="hidden" name="_subject" value="New WOW Flower order — 25mg">
-        <input type="hidden" name="interested_in" value="WOW Flower: 25mg">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="tel" name="phone" placeholder="Phone number" required>
-        <input type="date" name="preferred_date">
-        <input type="text" name="preferred_time" placeholder="Preferred time (e.g. mornings, after 3pm)">
-        <button class="btn primary" type="submit">Send request</button>
-        <p class="sent">Thanks — we'll follow up soon!</p>
-      </form>
-    </div>
-    <div class="tier-card">
-      <p class="tier-name">50mg</p>
-      <button class="btn primary" type="button" onclick="toggleInlineForm('f-flower50mg')">Purchase</button>
-      <form class="inline-form" id="f-flower50mg" action="https://formspree.io/f/xeajjaqv" method="POST" onsubmit="return submitRequest(event)">
-        <input type="hidden" name="_subject" value="New WOW Flower order — 50mg">
-        <input type="hidden" name="interested_in" value="WOW Flower: 50mg">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="tel" name="phone" placeholder="Phone number" required>
-        <input type="date" name="preferred_date">
-        <input type="text" name="preferred_time" placeholder="Preferred time (e.g. mornings, after 3pm)">
-        <button class="btn primary" type="submit">Send request</button>
-        <p class="sent">Thanks — we'll follow up soon!</p>
-      </form>
-    </div>
-  </div>
-
   <div class="subsection-head">
     <h3>Additional Services</h3>
-    <p>Beyond IVs, shots, and WOW Flower.</p>
+    <p>Beyond IVs and shots.</p>
   </div>
   <div class="grid">
     <div class="card">
