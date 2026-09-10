@@ -119,7 +119,9 @@
   .tier-card .tier-name{font-family:'Karla',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--a);margin:0 0 14px;}
   .tier-card .btn{width:100%;justify-content:center;}
 
-  .photoframe{background:linear-gradient(160deg, var(--wash) 0%, #EFE6DD 100%);border:1.5px dashed var(--b);border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--ink-soft);text-align:center;padding:10px;}
+  .photoframe{background:linear-gradient(160deg, var(--wash) 0%, #EFE6DD 100%);border:1.5px dashed var(--b);border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--ink-soft);text-align:center;padding:10px;overflow:hidden;}
+  .photoframe.filled{border:none;padding:0;background:none;}
+  .photoframe img{width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;}
   .photoframe svg{opacity:.5;}
   .photoframe span{font-family:'Karla',sans-serif;font-size:10.5px;line-height:1.4;max-width:180px;}
   .hero-photo{width:260px;height:220px;flex-shrink:0;}
@@ -176,9 +178,8 @@
       <p class="sent" id="cbsent">Thanks — Sherry's team will call you back within one business day.</p>
     </form>
   </div>
-  <div class="photoframe hero-photo">
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-4-4 3-3-2-6 5"/></svg>
-    <span>Photo: Sherry administering an IV, smiling</span>
+  <div class="photoframe filled hero-photo">
+    <img src="images/sherry-jacket-stethoscope.jpg" alt="Sherry Williams, RN, in Nurse WOW branded jacket with stethoscope">
   </div>
 </header>
 

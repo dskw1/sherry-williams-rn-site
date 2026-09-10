@@ -75,9 +75,12 @@
     color:var(--ink-soft);
     text-align:center;
     padding:8px;
+    overflow:hidden;
   }
   .photoframe svg{opacity:.5;}
   .photoframe span{font-family:'Karla',sans-serif;font-size:10.5px;line-height:1.4;max-width:180px;}
+  .photoframe.filled{border:none;padding:0;background:none;}
+  .photoframe img{width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;}
 
   header.top{display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:center;}
   @media (max-width:760px){ header.top{grid-template-columns:1fr;} }
@@ -273,16 +276,14 @@
     <h1>Sherry Williams RN<br>Health &amp; Wellness</h1>
     <p class="lede">One nurse, four ways to get care across the DFW metro — from your first prenatal appointment to a lifetime of wellness. Pick the chart that fits what you need today.</p>
   </div>
-  <div class="photoframe">
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-4-4 3-3-2-6 5"/></svg>
-    <span>Photo: Sherry with a client, warm and candid</span>
+  <div class="photoframe filled">
+    <img src="images/sherry-labcoat-hero.jpg" alt="Sherry Williams, RN">
   </div>
 </header>
 
 <section class="about">
-  <div class="photoframe">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-4-4 3-3-2-6 5"/></svg>
-    <span>Photo: Sherry, headshot</span>
+  <div class="photoframe filled">
+    <img src="images/sherry-headshot.jpg" alt="Sherry Williams, RN, headshot">
   </div>
   <div class="story">
     <p>In 2004, I was diagnosed with Lupus. For an active nurse with three small children, news like that is crushing. I wanted answers. I wanted my health back.</p>

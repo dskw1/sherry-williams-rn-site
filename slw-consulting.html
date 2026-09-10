@@ -44,7 +44,9 @@
   .stat .num{font-family:'Fraunces',serif;font-size:26px;color:var(--a);font-weight:600;}
   .stat .label{font-size:11px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;font-family:'Karla',sans-serif;}
 
-  .photoframe{background:linear-gradient(160deg, var(--wash) 0%, #EFE6DD 100%);border:1.5px dashed var(--b);border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--ink-soft);text-align:center;padding:10px;}
+  .photoframe{background:linear-gradient(160deg, var(--wash) 0%, #EFE6DD 100%);border:1.5px dashed var(--b);border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--ink-soft);text-align:center;padding:10px;overflow:hidden;}
+  .photoframe.filled{border:none;padding:0;background:none;}
+  .photoframe img{width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;}
   .photoframe svg{opacity:.5;}
   .photoframe span{font-family:'Karla',sans-serif;font-size:10.5px;line-height:1.4;max-width:180px;}
   .hero-photo{width:260px;height:220px;flex-shrink:0;}
@@ -149,9 +151,8 @@
       <div class="stat"><div class="num">10–15</div><div class="label">Students / Cohort</div></div>
     </div>
   </div>
-  <div class="photoframe hero-photo">
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-4-4 3-3-2-6 5"/></svg>
-    <span>Photo: Sherry mentoring a nurse</span>
+  <div class="photoframe filled hero-photo">
+    <img src="images/sherry-laptop.jpg" alt="Sherry Williams, RN, working">
   </div>
 </header>
 
